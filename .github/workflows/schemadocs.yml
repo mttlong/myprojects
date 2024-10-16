@@ -43,8 +43,8 @@ jobs:
           path: ./schemaspy-output/
       - name: Commit Documentation
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          git config --global user.name 'mttlong'
+          git config --global user.email 'mttlong@hotmail.com'
           git add schemaspy-output/*
           git commit -m "Update database documentation"
           git push origin HEAD:main  
