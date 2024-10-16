@@ -17,7 +17,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Download PostgreSQL JDBC Driver
-        run: wget https://jdbc.postgresql.org/download/postgresql-42.2.14.jar                
+        run: wget https://jdbc.postgresql.org/download/postgresql-42.2.14.jar
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz        
       - name: Download SchemaSpy
         run: wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
       - name: Run SchemaSpy
@@ -31,5 +33,6 @@ jobs:
             -p ${{ secrets.DB_PASSWORD }} \
             -connprops sslmode\\=require \
             -o ./schemaspy-output
+            -debug
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
