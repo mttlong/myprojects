@@ -36,3 +36,9 @@ jobs:
             -debug
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      - name: Upload SchemaSpy Output as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: schemaspy-docs
+          path: ./schemaspy-output/
+          
