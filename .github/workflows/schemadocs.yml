@@ -20,3 +20,16 @@ jobs:
         run: wget https://jdbc.postgresql.org/download/postgresql-42.2.14.jar                
       - name: Download SchemaSpy
         run: wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
+      - name: Run SchemaSpy
+        run: |
+          java -jar schemaspy-6.1.0.jar -t pgsql \
+            -dp postgresql-42.2.14.jar \
+            -db test \
+            -host ep-spring-pine-a19i5fgg.ap-southeast-1.aws.neon.tech \
+            -port 5432 \
+            -u test_owner \
+            -p ${{ secrets.DB_PASSWORD }} \
+            -connprops sslmode\\=require \
+            -o ./schemaspy-output
+        env:
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
