@@ -27,7 +27,7 @@ jobs:
           java -jar schemaspy-6.1.0.jar -t pgsql \
             -dp postgresql-42.2.14.jar \
             -db test \
-            -host ep-spring-pine-a19i5fgg.ap-southeast-1.aws.neon.tech \
+            -host ep-solitary-river-a1vsgyfp.ap-southeast-1.aws.neon.tech \
             -port 5432 \
             -u test_owner \
             -p ${{ secrets.DB_PASSWORD }} \
