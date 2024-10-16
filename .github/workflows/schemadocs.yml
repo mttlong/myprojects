@@ -5,6 +5,8 @@ on:
     # Sequence of patterns matched against refs/heads
     branches:
       - 'main'
+permissions:
+  contents: write  # Gives the token write access to repository contents      
 jobs:
   Generate-Schema-Docs:
     runs-on: ubuntu-latest
