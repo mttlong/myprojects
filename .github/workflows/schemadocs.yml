@@ -32,7 +32,7 @@ jobs:
             -u test_owner \
             -p ${{ secrets.DB_PASSWORD }} \
             -connprops sslmode\\=require \
-            -o ./schemaspy-output
+            -o ./schemaspy-output \
             -debug
         env:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
