@@ -47,7 +47,7 @@ jobs:
         run: |
           git checkout -b pages || git checkout pages
           git add schemaspy-output/*
-          git commit -m "Update database documentation"
+          git commit -m "Update database documentation by ${{ github.actor }}"
           git push -u origin pages --force
       - name: Complete Deployment
         uses: peaceiris/actions-gh-pages@v3
